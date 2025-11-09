@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './Home'
 import Nav from './Nav'
+import BlogList from './BlogList'
+import CreateBlog from './CreateBlog'
+import BlogDetails from './BlogDetails'
 
 function App() {
 
@@ -10,7 +12,10 @@ function App() {
     <>
       <Nav />
       <div className="container"><h1>Welcome to my blog page</h1></div>
-      <Home />
+      <BlogList />
+      <CreateBlog />
+      <BlogDetails />
+
     </>
   )
 }

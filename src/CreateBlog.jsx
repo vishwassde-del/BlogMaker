@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+
+const CreateBlog = () => {
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [author, setAuthor] = useState("Vishwas");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const blog = { title, body, author };
+    console.log("New blog:", blog);
+  }
+
+  return (
+    <div className="create-blog">
+      <h2>Create New Blog</h2>
+
+      <form onSubmit={handleSubmit}>
+        <label>Blog Title:</label>
+        <input
+          type="text"
+          required
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+
+        <label>Blog Body:</label>
+        <textarea
+          required
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+        ></textarea>
+
+        <label>Author:</label>
+        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
+          <option value="Vishwas">Vishwas</option>
+          <option value="Guest">Guest</option>
+        </select>
+
+        <button>Add Blog</button>
+      </form>
+    </div>
+  );
+};
+
+export default CreateBlog;
